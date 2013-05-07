@@ -1,1 +1,1 @@
-# Definition files for UIAutomation iOS Javascript Library
+## TypeScript Definition files for UIAutomation iOS Javascript Library
