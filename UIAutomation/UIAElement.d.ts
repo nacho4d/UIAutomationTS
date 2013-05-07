@@ -36,12 +36,12 @@ interface UIATapOptions {
 interface UIAElementArray {
 	length: Number;
 	firstWithName(name: String): UIAElement;
-	firstWithPredicate(predicate: String): UIAElement;
-	firstWithValueForKey(val: Object, key: String): UIAElement;
+	firstWithPredicate(predicate: String): UIAElement; // FIXME: predicate should be of type PredicateString
+	firstWithValueForKey(val: Object, key: String): UIAElement; // FIXME: val should be of type NotTyped
 	toArray(): Array;
 	withName(name: String): UIAElement;
-	withPredicate(predicate: String): UIAElement;
-	withValueForKey(val: Object, key: String): UIAElementArray;
+	withPredicate(predicate: String): UIAElement; // FIXME: predicate should be of type PredicateString
+	withValueForKey(val: Object, key: String): UIAElementArray; // FIXME: val should be of type NotTyped
 }
 
 // Formal declaration of UIAElement
@@ -52,7 +52,7 @@ interface UIAElement extends Object {
 	rect(): UIARect;
 
 	// Determining and Manipulating Element Hierachy
-	activityIndicators(): Array;
+	activityIndicators(): UIAElementArray;
 	activityView(): UIAActivityView;	// Since iOS 6.0
 	ancestry(): UIAElementArray;
 	buttons(): UIAElementArray;
@@ -82,7 +82,7 @@ interface UIAElement extends Object {
 	toolbar(): UIAElement;
 	toolbars(): UIAElementArray;
 	webViews(): UIAElementArray;
-	
+
 	// Gestures and Actions
 	doubleTap(): undefined;
 	dragInsideWithOptions(options: UIADragOptions): undefined;
@@ -107,12 +107,14 @@ interface UIAElement extends Object {
 	name(): String;
 	value(): String;
 	withName(name: String): UIAElement;
-	withPredicate(predicateString: String): UIAElement;
-	withValueForKey(value: Object, key: String): UIAElement;
+	withPredicate(predicateString: String): UIAElement; // FIXME: predicate should be of type PredicateString
+	withValueForKey(value: Object, key: String): UIAElement; // FIXME: value should be of type NotTyped
 
 	// Logging Element Information
 	logElement(): undefined;
 	logElementTree(): undefined;
 }
 
-//static UIAElementNil: UIAElement;
+//static UIAElementNil: UIAElement; // FIXME: UIAElementNil should be a constant of type UIAElement
+
+

@@ -6,6 +6,6 @@ interface UIAScrollView extends UIAElement {
 	scrollLeft(): undefined;
 	scrollRight(): undefined;
 	scrollToElementWithName(name: String): UIAElement;
-	scrollToElementWithPredicate(predicate: String): UIAElement;
-	scrollToElementWithValueForKey(value: Object, key: String): UIAElement;
+	scrollToElementWithPredicate(predicate: String): UIAElement; // FIXME: predicate should be of type PredicateString
+	scrollToElementWithValueForKey(value: Object, key: String): UIAElement; // FIXME: value should be of type NotTyped
 }

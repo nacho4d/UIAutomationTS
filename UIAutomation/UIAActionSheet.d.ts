@@ -1,4 +1,5 @@
-/// <reference path="UIAElement.d.ts" />
+/// <reference path="UIAButton.d.ts" />
 
 interface UIAActionSheet extends UIAElement {
+	cancelButton(): UIAButton;
 }
